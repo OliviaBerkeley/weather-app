@@ -129,6 +129,9 @@ p.coded-by {
   font-family: monospace;
   color: #fcfafb;
 }
+.coded-link {
+  color: rgb(252, 34, 96);
+}
 .city {
   font-size: 45px;
   font-weight: 300;
