@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/3ab7f37734.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abel&family=Dancing+Script:wght@562&family=Poiret+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <form class="form-inline cel-far" name="form1" id="radioOption">
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="radio1"
+            id="inlineRadio1"
+            value="option1"
+            checked
+          />
+          <label class="form-check-label" for="inlineRadio1"> °F</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="radio1"
+            id="inlineRadio2"
+            value="option2"
+          />
+          <label class="form-check-label" for="inlineRadio2"> °C</label>
+        </div>
+      </form>
+      <form class="form-inline change-city" id="search-form">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            placeholder="Change city"
+            autocomplete="off"
+            id="search-input"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm" id="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary btn-sm current-location-button"
+          id="location-button"
+        >
+          <i class="fas fa-location-arrow"></i>
+        </button>
+      </form>
+
+      <div class="header">
+        <h1 class="city">Tacoma, WA</h1>
+        <span class="day-time" id="date"></span>
+      </div>
+
+      <div class="row current-forecast">
+        <div class="col-md-12 current-temp">
+          <p>Sunny</p>
+          <h3>— <span id="celsius-fahrenheit">75°</span> —</h3>
+          <p><small>Feels like 75°</small></p>
+          <ul>
+            <li class="precipitation">
+              <i class="fas fa-umbrella weather-icon"></i> Precipitation — 0%
+            </li>
+            <li class="humidity">
+              <i class="fas fa-water weather-icon"></i> Humidity — 80%
+            </li>
+            <li class="wind">
+              <i class="fas fa-wind weather-icon"></i> Wind — 5mph
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row future-forecast">
+        <div class="col five-day">
+          <h4>Sat</h4>
+          <i class="fas fa-sun"></i>
+          <p>— 78° —</p>
+        </div>
+        <div class="col five-day">
+          <h4>Sun</h4>
+          <i class="fas fa-cloud-sun"></i>
+          <p>— 81° —</p>
+        </div>
+        <div class="col five-day">
+          <h4>Mon</h4>
+          <i class="fas fa-cloud-sun"></i>
+          <p>— 80° —</p>
+        </div>
+        <div class="col five-day">
+          <h4>Tue</h4>
+          <i class="fas fa-sun"></i>
+          <p>— 83° —</p>
+        </div>
+        <div class="col five-day">
+          <h4>Wed</h4>
+          <i class="fas fa-sun"></i>
+          <p>— 82° —</p>
+        </div>
+      </div>
+      <p class="coded-by">Fo' Drizzle! | Coded by Olivia Goodwin</p>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

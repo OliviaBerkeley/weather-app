@@ -1,0 +1,153 @@
+.container {
+  background-image: url("https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80");
+  margin: 25px auto;
+  padding: 25px 25px 10px 25px;
+  border-radius: 4px;
+  box-shadow: 4px 7px 9px rgba(19, 12, 12, 0.4);
+}
+.cel-far {
+  float: right;
+  font-family: "Abel", sans-serif;
+  text-align: center;
+  font-weight: 900;
+  margin: 0 10px;
+  padding: 3px 0 0 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  color: #fdd47b;
+  opacity: 0.9;
+}
+
+.cel-far label {
+  text-align: center;
+  display: inline-block;
+  background-color: rgba(252, 34, 96, 0.7);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 5px 10px;
+  margin: 10px 3px;
+  font-family: "Abel", sans-serif;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.cel-far input[type="radio"]:checked {
+  background-color: rgb(70, 29, 128);
+}
+
+div.header {
+  padding: 10px;
+  color: #fcfafb;
+  text-align: left;
+  margin: 0 10px;
+}
+span.day-time {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 4px;
+  font-family: "Poiret One", cursive;
+}
+form.change-city {
+  float: right;
+  margin: 0;
+  background: rgba(253, 212, 123, 0.1);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  color: #fcfafb;
+  padding: 10px;
+  opacity: 0.9;
+  font-family: "Abel", sans-serif;
+}
+button.btn {
+  background: #fdd47b;
+  border-color: rgba(253, 212, 123, 0.8);
+  margin-left: 4px;
+  transition: all 175ms ease-in-out;
+  cursor: pointer;
+}
+button.btn:hover {
+  background: rgb(252, 34, 96);
+}
+h3 {
+  font-size: 90px;
+  font-family: "Abel", sans-serif;
+}
+ul {
+  list-style: none;
+  padding: 10px;
+  text-align: center;
+  font-family: "Abel", sans-serif;
+  background: rgba(74, 214, 174, 0.8);
+  margin: 0;
+  box-shadow: 9px 9px 10px rgba(0, 0, 0, 0.3);
+  transition: all 175ms ease-in-out;
+}
+ul:hover {
+  background: rgba(253, 212, 123, 0.8);
+}
+div.current-temp p {
+  font-size: 25px;
+  font-family: "Poiret One", cursive;
+}
+
+li {
+  display: inline;
+  margin: 0 25px;
+  color: #fcfafb;
+  font-size: 15px;
+}
+div.five-day p {
+  font-size: 22px;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+div.five-day {
+  margin: 0 25px;
+  padding: 10px 0;
+  border-radius: 2px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(70, 29, 128, 0.6) 25%,
+    rgba(74, 214, 174, 0.6) 100%
+  );
+  text-align: center;
+  color: #fcfafb;
+  font-family: "Abel", sans-serif;
+  transition: all 200ms ease-in-out;
+}
+.five-day:hover {
+  background: rgba(253, 212, 123, 0.8);
+}
+.five-day i {
+  font-size: 45px;
+  color: rgb(253, 212, 123);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+p.coded-by {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: monospace;
+  color: #fcfafb;
+}
+.city {
+  font-size: 45px;
+  font-weight: 300;
+  font-family: "Abel", sans-serif;
+}
+
+.current-forecast {
+  margin: 25px auto;
+}
+.current-temp {
+  color: #fcfafb;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  background: rgba(252, 34, 96, 0.65);
+  padding: 15px 0;
+  box-shadow: 9px 9px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+.weather-icon {
+  color: rgb(252, 34, 96);
+  font-size: 20px;
+}
