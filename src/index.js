@@ -75,8 +75,8 @@ function getPosition(event) {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 
-let location = document.querySelector("#location-button");
-location.addEventListener("click", getPosition);
+let yourLocation = document.querySelector("#location-button");
+yourLocation.addEventListener("click", getPosition);
 
 function searchCityUrl() {
   let searchCityUrl = `${apiEndpoint}?q=${city}&units=${units}&appid=${apiKey}`;
