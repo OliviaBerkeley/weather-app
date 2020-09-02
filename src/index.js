@@ -1,7 +1,101 @@
-let city = "Tacoma";
-let units = "imperial";
+//define city variable with a default city
+let city = "Dallas";
+//define apiRoot
+let apiRoot = "https://api.openweathermap.org/data/2.5/weather?";
+//define apiKey
 let apiKey = "7089a113b279137568bbbe6f86ce8c1f";
-let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+//define units
+let units = "imperial";
+let temp;
+let feelsLike;
+//calls searchCity at page load with default city location
+searchCity();
+//create full apiURL inside a function, call axius to get the api response
+
+document.querySelector("#search-form").addEventListener("submit", querySearch);
+function querySearch(event) {
+  event.preventDefault();
+  city = document.querySelector("#search-input").value;
+  searchCity();
+}
+function handleLocation(lat, lon) {
+  let apiUrl = `${apiRoot}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(handleResponse);
+}
+function getLocation(event) {
+  event.preventDefault();
+  function handlePosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    handleLocation(lat, lon);
+  }
+  navigator.geolocation.getCurrentPosition(handlePosition);
+}
+document
+  .querySelector("#location-button")
+  .addEventListener("click", getLocation);
+//create event listener for current location button
+//Location button triggers getLocation which gets the lat & lon
+//create function that recreates the apiUrl
+//call axios using the new apiUrl and then handleResponse
+
+function searchCity() {
+  let apiUrl = `${apiRoot}q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(handleResponse);
+}
+//Create function that breaks down the api's response and adjusts your html using selectors
+function handleResponse(response) {
+  //Adjust city name from response
+  document.querySelector(".header h1").innerHTML = response.data.name;
+  //Adjust current temp from response
+  temp = Math.round(response.data.main.temp);
+  let tempSelector = document.querySelector("#celsius-fahrenheit");
+  tempSelector.innerHTML = temp;
+  //Adjust feels-like temp from response
+  feelsLike = Math.round(response.data.main.feels_like);
+  let feelsLikeSelector = document.querySelector("#feels-like");
+  feelsLikeSelector.innerHTML = feelsLike;
+  //Adjust weather description from response
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
+
+  //Adjust precipitation from response
+  //Adjust humidity from response
+  //Adjust wind from response
+}
+
+function displayCelsius(event) {
+  event.preventDefault();
+  if (fahrenheitLink.classList.contains("active")) {
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    let feelsLikeConversion = document.querySelector("#feels-like");
+    let displayCel = document.querySelector("#celsius-fahrenheit");
+    let fToC = Number(displayCel.innerHTML);
+    fToC = Math.round(((fToC - 32) * 5) / 9);
+    displayCel.innerHTML = `${fToC}`;
+    feelsLikeConversion.innerHTML = `${Math.round(((feelsLike - 32) * 5) / 9)}`;
+  }
+}
+function displayFahrenheit(event) {
+  event.preventDefault();
+  if (celsiusLink.classList.contains("active")) {
+    fahrenheitLink.classList.add("active");
+    celsiusLink.classList.remove("active");
+    let feelsLikeFahr = document.querySelector("#feels-like");
+    let displayFahr = document.querySelector("#celsius-fahrenheit");
+    displayFahr.innerHTML = temp;
+    feelsLikeFahr.innerHTML = feelsLike;
+  }
+}
+
+let celsiusLink = document.querySelector("#cel-link");
+celsiusLink.addEventListener("click", displayCelsius);
+
+let fahrenheitLink = document.querySelector("#fahr-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+//Date section - do not touch! Don't even breathe!
 let now = new Date();
 let day = now.getDay();
 let newTime = new Intl.DateTimeFormat("en", {
@@ -27,59 +121,4 @@ function changeDate() {
 
 changeDate();
 
-function changeTemp(event) {
-  event.preventDefault();
-  if (document.form1.radio1[0].checked === true) {
-    let heading = document.querySelector("#celsius-fahrenheit");
-    heading.innerHTML = "70°F";
-  } else if (document.form1.radio1[1].checked === true) {
-    let heading = document.querySelector("#celsius-fahrenheit");
-    heading.innerHTML = "10°C";
-  } else {
-  }
-}
-let radioButton = document.querySelector("#radioOption");
-radioButton.addEventListener("click", changeTemp);
-
-///////////
-///////////
-
-function changeCity(event) {
-  event.preventDefault();
-  city = document.querySelector("#search-input").value;
-  searchCityUrl();
-}
-let searchButton = document.querySelector("#search-form");
-searchButton.addEventListener("submit", changeCity);
-
-function showCurrentLocation(response) {
-  let showCity = document.querySelector("h1");
-  let currentTemp = document.querySelector("#celsius-fahrenheit");
-  let showCurrentTemp = Math.round(response.data.main.temp);
-  let currentCity = response.data.name;
-  showCity.innerHTML = `${currentCity}`;
-  currentTemp.innerHTML = `${showCurrentTemp}°`;
-}
-
-function showLocation(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let unit = "imperial";
-  let apiKey = "7089a113b279137568bbbe6f86ce8c1f";
-  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
-  let apiUrl = `${apiEndpoint}?lat=${lat}&lon=${lon}&units=${unit}&appid=${apiKey}`;
-  axios.get(apiUrl).then(showCurrentLocation);
-}
-function getPosition(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showLocation);
-}
-
-let yourLocation = document.querySelector("#location-button");
-yourLocation.addEventListener("click", getPosition);
-
-function searchCityUrl() {
-  let searchCityUrl = `${apiEndpoint}?q=${city}&units=${units}&appid=${apiKey}`;
-  axios.get(searchCityUrl).then(showCurrentLocation);
-}
-searchCityUrl();
+//Do not change code above this line!!!

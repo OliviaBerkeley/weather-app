@@ -5,31 +5,33 @@
   border-radius: 4px;
   box-shadow: 4px 7px 9px rgba(19, 12, 12, 0.4);
 }
-.cel-far {
+.cel-fahr {
   float: right;
-  font-family: "Abel", sans-serif;
-  text-align: center;
-  font-weight: 900;
   margin: 0 10px;
-  padding: 3px 0 0 10px;
+  padding: 2px 9px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  color: #fdd47b;
   opacity: 0.9;
 }
 
-.cel-far label {
+#fahr-link,
+#cel-link {
+  font-family: "Abel", sans-serif;
+  color: #fdd47b;
   text-align: center;
+  font-weight: 900;
   display: inline-block;
   background-color: rgba(252, 34, 96, 0.7);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   padding: 5px 10px;
   margin: 10px 3px;
-  font-family: "Abel", sans-serif;
   font-size: 12px;
   border-radius: 4px;
 }
-.cel-far input[type="radio"]:checked {
-  background-color: rgb(70, 29, 128);
+#fahr-link:hover,
+#cel-link:hover {
+  color: rgb(74, 214, 174);
+  background: rgba(70, 29, 128, 0.6);
+  text-decoration: none;
 }
 
 div.header {
@@ -57,7 +59,7 @@ form.change-city {
 button.btn {
   background: #fdd47b;
   border-color: rgba(253, 212, 123, 0.8);
-  margin-left: 4px;
+  margin-left: 10px;
   transition: all 175ms ease-in-out;
   cursor: pointer;
 }
