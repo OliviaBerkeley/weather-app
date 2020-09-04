@@ -63,46 +63,14 @@
             <small>Feels like <span id="feels-like">75</span>°</small>
           </p>
           <ul>
-            <li class="precipitation">
-              <i class="fas fa-umbrella weather-icon"></i> Precipitation — 0%
-            </li>
-            <li class="humidity">
-              <i class="fas fa-water weather-icon"></i> Humidity — 80%
-            </li>
-            <li class="wind">
-              <i class="fas fa-wind weather-icon"></i> Wind — 5mph
-            </li>
+            <li class="clouds" id="clouds"></li>
+            <li class="humidity" id="humidity"></li>
+            <li class="wind" id="wind"></li>
           </ul>
         </div>
       </div>
 
-      <div class="row future-forecast">
-        <div class="col five-day">
-          <h4>Sat</h4>
-          <i class="fas fa-sun"></i>
-          <p>— 78° —</p>
-        </div>
-        <div class="col five-day">
-          <h4>Sun</h4>
-          <i class="fas fa-cloud-sun"></i>
-          <p>— 81° —</p>
-        </div>
-        <div class="col five-day">
-          <h4>Mon</h4>
-          <i class="fas fa-cloud-sun"></i>
-          <p>— 80° —</p>
-        </div>
-        <div class="col five-day">
-          <h4>Tue</h4>
-          <i class="fas fa-sun"></i>
-          <p>— 83° —</p>
-        </div>
-        <div class="col five-day">
-          <h4>Wed</h4>
-          <i class="fas fa-sun"></i>
-          <p>— 82° —</p>
-        </div>
-      </div>
+      <div class="row future-forecast" id="forecast"></div>
       <p class="coded-by">
         Fo' Drizzle! | Coded by Olivia Goodwin |
         <a
